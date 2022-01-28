@@ -66,7 +66,7 @@ module "aks" {
 }
 
 module "certs" {
-  source     = "../"
+  source     = "git::https://github.com/danielscholl-terraform/module-cert-manager?ref=v1.0.0"
   depends_on = [module.aks]
 
   providers = { helm = helm.aks }
